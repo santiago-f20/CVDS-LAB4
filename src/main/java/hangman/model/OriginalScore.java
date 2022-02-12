@@ -29,7 +29,7 @@ public class OriginalScore implements GameScore{
      */
 
     @Override
-    public int calculateScore(int correctCount, int incorrectCount) throws scoreException{
+    public int calculateScore(int correctCount, int incorrectCount) throws ScoreException{
         return 0;
     }
 }

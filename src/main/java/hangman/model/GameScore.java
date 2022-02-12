@@ -9,5 +9,5 @@ package hangman.model;
  * @author santiago.fetecua
  */
 public interface GameScore {
-    abstract public int calculateScore(int correctCount, int incorrectCount) throws scoreException;
+    abstract public int calculateScore(int correctCount, int incorrectCount) throws ScoreException;
 }
