@@ -5,8 +5,9 @@
 package hangman.model;
 
 /**
- *
- * @author santiago.fetecua
+ * LAB 4 CVDS
+ * Santiago Fetecua 
+ * Edwar Lozano
  */
 public class BonusScore implements GameScore{
     
