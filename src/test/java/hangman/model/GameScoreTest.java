@@ -8,8 +8,9 @@ import org.junit.Assert;
 import org.junit.Test;
 
 /**
- *
- * @author santiago.fetecua
+ * LAB 4 CVDS
+ * Santiago Fetecua 
+ * Edwar Lozano
  */
 public class GameScoreTest {
     /**

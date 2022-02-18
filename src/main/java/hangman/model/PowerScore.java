@@ -5,11 +5,12 @@
 package hangman.model;
 
 /**
- *
- * @author santiago.fetecua
+ * LAB 4 CVDS
+ * Santiago Fetecua 
+ * Edwar Lozano
  */
 public class PowerScore implements GameScore{
-    
+    private int scoreCalculated = 0;
     /**
      * Función creada para calcular el score del juego de acuerdo a las
      * condiciones especiales PowerScore
@@ -29,7 +30,26 @@ public class PowerScore implements GameScore{
      */
     
     @Override
-    public int calculateScore(int correctCount, int incorrectCount){
-        return 0;
+    public int calculateScore(int correctCount, int incorrectCount) throws ScoreException{
+        if(correctCount < 0 || incorrectCount < 0){
+            throw new ScoreException(ScoreException.NEGATIVE);
+        }
+        correct(correctCount);
+        incorrect(incorrectCount);
+        
+        return (scoreCalculated > 500)?500:(scoreCalculated<0)?0:scoreCalculated;
+
+    }
+
+    private void incorrect(int incorrectCount){
+        scoreCalculated -= 8*incorrectCount;
+    }
+
+    private void correct(int correctCount){
+        if(correctCount != 0){
+            for(int i = 1; i<= correctCount;i++){
+                scoreCalculated += Math.pow(5, i);
+            }
+        }
     }
 }

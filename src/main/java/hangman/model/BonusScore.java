@@ -28,7 +28,11 @@ public class BonusScore implements GameScore{
      */
     
     @Override
-    public int calculateScore(int correctCount, int incorrectCount){
-        return 0;
+    public int calculateScore(int correctCount, int incorrectCount) throws ScoreException{
+        if(correctCount < 0 || incorrectCount < 0){
+            throw new ScoreException(ScoreException.NEGATIVE);
+        }
+        return (incorrectCount>correctCount*2)?0:correctCount*10-incorrectCount*5;
+
     }
 }
